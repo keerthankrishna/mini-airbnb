@@ -41,7 +41,7 @@ fig = px.scatter_mapbox(
     dataframe,
     lat="Latitude",
     lon="Longitude",
-    color='rgb(255, 0, 0)',
+    color="rgb(255, 0, 0)",
     zoom=11,
     height=500,
     width=800,
