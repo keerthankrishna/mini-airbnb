@@ -48,6 +48,7 @@ fig = px.scatter_mapbox(
     hover_name="Price",
     hover_data=["Meters from chosen location", "Location"],
     labels={"color": "Locations"},
+    color_discrete_sequence=["blue", "red"]
 )
 fig.update_geos(center=dict(lat=dataframe.iloc[0][2], lon=dataframe.iloc[0][3]))
 fig.update_layout(mapbox_style="open-street-map")
