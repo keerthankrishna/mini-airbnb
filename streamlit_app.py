@@ -50,7 +50,7 @@ fig = px.scatter_mapbox(
     labels={"color": "Locations"},
 )
 fig.update_geos(center=dict(lat=dataframe.iloc[0][2], lon=dataframe.iloc[0][3]))
-fig.update_layout(mapbox_style="open-street-map")
+fig.update_layout(mapbox_style="carto-positron")
 
 # Show the figure
 st.plotly_chart(fig, use_container_width=True)
