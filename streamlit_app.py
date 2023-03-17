@@ -29,7 +29,7 @@ dataframe["Airbnb Listing ID"] = dataframe["Airbnb Listing ID"].astype(int)
 dataframe["Price"] = "€ " + dataframe["Price"].round(2).astype(str) # <--- CHANGE THIS POUND SYMBOL IF YOU CHOSE CURRENCY OTHER THAN POUND
 # Rename the number to a string
 dataframe["Location"] = dataframe["Location"].replace(
-    {1.0: "To visit", 4.0: "Airbnb listing"}
+    {1.0: "To visit", 0.0: "Airbnb listing"}
 )
 
 # Display dataframe and text
@@ -50,7 +50,7 @@ fig = px.scatter_mapbox(
     labels={"color": "Locations"},
 )
 fig.update_geos(center=dict(lat=dataframe.iloc[0][2], lon=dataframe.iloc[0][3]))
-fig.update_layout(mapbox_style="stamen-terrain")
+fig.update_layout(mapbox_style="carto-darkmatter")
 
 # Show the figure
 st.plotly_chart(fig, use_container_width=True)
